@@ -1,0 +1,7 @@
+{
+  "name": "ionic-epub-reader",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
