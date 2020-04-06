@@ -2,22 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 
-import { HomePage } from './home.page';
+import { EbookSystemPage } from './ebook-system.page';
+import { EbookSystemRoutingModule } from './ebook-system-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: HomePage
-      }
-    ])
+    EbookSystemRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [EbookSystemPage]
 })
-export class HomePageModule {}
+export class EbookSystemPageModule {}
