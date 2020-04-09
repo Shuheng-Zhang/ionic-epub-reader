@@ -1,0 +1,9 @@
+.bookmark-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .bookmark-icon {
+        font-size: 45px;
+        margin: 0 4px;
+    }
+}

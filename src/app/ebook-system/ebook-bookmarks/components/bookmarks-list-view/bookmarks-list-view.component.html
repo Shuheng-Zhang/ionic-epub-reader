@@ -1,0 +1,37 @@
+<ion-list>
+  <ion-item-sliding *ngFor="let item of bookmarksList">
+    <ion-item button>
+      <ion-thumbnail class="bookmark-icon-wrapper">
+        <ion-icon class="bookmark-icon" name="bookmark-outline"></ion-icon>
+      </ion-thumbnail>
+      <!-- <div class="bookmark-icon-wrapper">
+        <ion-icon class="bookmark-icon" name="bookmark-outline"></ion-icon>
+      </div> -->
+
+      <ion-label>
+        <h3> {{ item.markedBookTitle }} </h3>
+        <p> {{ item.markedChapterName }} </p>
+        <p> {{ item.markedDate.toISOString() }} </p>
+      </ion-label>
+
+      <ion-thumbnail class="bookmark-icon-wrapper" slot="end">
+        <p> {{ item.markedPersentage }}% </p>
+      </ion-thumbnail>
+    </ion-item>
+    <ion-item-options slot="end">
+      <ion-item-option color="tertiary">
+        <ion-icon class="option-icon" name="return-up-forward-outline"></ion-icon>
+      </ion-item-option>
+      <!-- <ion-item-option color="secondary" (click)>
+        <ion-icon class="option-icon" name="sync-outline"></ion-icon>
+      </ion-item-option> -->
+      <ion-item-option color="primary">
+        <ion-icon class="option-icon" name="information-circle-outline"></ion-icon>
+      </ion-item-option>
+      <ion-item-option color="danger">
+        <ion-icon class="option-icon" name="trash-outline"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+

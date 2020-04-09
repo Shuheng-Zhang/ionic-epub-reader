@@ -1,0 +1,18 @@
+.cover-img {
+    height: 185px;
+    // padding: 0;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+}
+.card-title {
+    font-size: 16px;
+}
+.card-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .text {
+        font-size: 12px;
+    }
+}
+

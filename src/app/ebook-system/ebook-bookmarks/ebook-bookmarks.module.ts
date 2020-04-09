@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { EbookBookmarksPageRoutingModule } from './ebook-bookmarks-routing.module';
 
 import { EbookBookmarksPage } from './ebook-bookmarks.page';
+import { BookmarksListViewComponent } from './components/bookmarks-list-view/bookmarks-list-view.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { EbookBookmarksPage } from './ebook-bookmarks.page';
     IonicModule,
     EbookBookmarksPageRoutingModule
   ],
-  declarations: [EbookBookmarksPage]
+  declarations: [EbookBookmarksPage, BookmarksListViewComponent]
 })
 export class EbookBookmarksPageModule {}

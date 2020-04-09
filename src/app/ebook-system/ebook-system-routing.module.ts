@@ -12,8 +12,8 @@ const routes: Routes = [
                 children: [
                     {
                         path: '',
-                        // loadChildren: () => import('./ebook-reading/ebook-reading.module').then( m => m.EbookReadingPageModule)
-                        loadChildren: './ebook-reading/ebook-reading.module#EbookReadingPageModule'
+                        loadChildren: () => import('./ebook-reading/ebook-reading.module').then( m => m.EbookReadingPageModule)
+                        // loadChildren: './ebook-reading/ebook-reading.module#EbookReadingPageModule'
                     }
                 ]
             },
@@ -22,8 +22,8 @@ const routes: Routes = [
                 children: [
                     {
                         path: '',
-                        // loadChildren: () => import('./ebook-library/ebook-library.module').then( m => m.EbookLibraryPageModule)
-                        loadChildren: './ebook-library/ebook-library.module#EbookLibraryPageModule'
+                        loadChildren: () => import('./ebook-library/ebook-library.module').then( m => m.EbookLibraryPageModule)
+                        // loadChildren: './ebook-library/ebook-library.module#EbookLibraryPageModule'
                     }
                 ]
             },
@@ -32,8 +32,8 @@ const routes: Routes = [
                 children: [
                     {
                         path: '',
-                        // loadChildren: () => import('./ebook-bookmarks/ebook-bookmarks.module').then(m => m.EbookBookmarksPageModule)
-                        loadChildren: './ebook-bookmarks/ebook-bookmarks.module#EbookBookmarksPageModule'
+                        loadChildren: () => import('./ebook-bookmarks/ebook-bookmarks.module').then(m => m.EbookBookmarksPageModule)
+                        // loadChildren: './ebook-bookmarks/ebook-bookmarks.module#EbookBookmarksPageModule'
                     }
                 ]
             },
@@ -42,8 +42,8 @@ const routes: Routes = [
                 children: [
                     {
                         path: '',
-                        // loadChildren: () => import('./sys-profile/sys-profile.module').then(m => m.SysProfilePageModule)
-                        loadChildren: './sys-profile/sys-profile.module#SysProfilePageModule'
+                        loadChildren: () => import('./sys-profile/sys-profile.module').then(m => m.SysProfilePageModule)
+                        // loadChildren: './sys-profile/sys-profile.module#SysProfilePageModule'
                     }
                 ]
             },

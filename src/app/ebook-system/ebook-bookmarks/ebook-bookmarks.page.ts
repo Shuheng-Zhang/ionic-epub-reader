@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BookmarkDetailInfoDto } from '../../models/bookmark.model';
+import { bookmarksListDto } from '../../mocks/bookmaarks.mock';
+import { LoadingController, IonRefresher } from '@ionic/angular';
 
 @Component({
   selector: 'app-ebook-bookmarks',
@@ -7,9 +10,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EbookBookmarksPage implements OnInit {
 
-  constructor() { }
+  isSearchBarShowed = false;
 
-  ngOnInit() {
+  bookmarksList: BookmarkDetailInfoDto[];
+
+  constructor(
+    private loadingCtrl: LoadingController
+  ) { }
+
+  ngOnInit() {}
+
+
+  ionViewDidEnter() {
+    this.loadingBookmarks();
   }
 
+  onToggleLibrarySearch() {
+    this.isSearchBarShowed = !this.isSearchBarShowed;
+  }
+
+
+  onRefreshing(event: any) {
+    console.log(`[Sync]`, event);
+    setTimeout(() => {
+      event.target.complete();
+    }, 1500);
+  }
+
+  private async loadingBookmarks() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Loading Books...',
+      spinner: 'bubbles',
+      duration: 500
+    });
+    await loading.present();
+
+    this.bookmarksList = bookmarksListDto;
+
+    // await loading.onDidDismiss()
+
+  }
 }

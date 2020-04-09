@@ -1,0 +1,12 @@
+.option-icon {
+    font-size: 18px;
+}
+.progress-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .progress-text {
+        font-size: 16px;
+        font-weight: 400;
+    }
+}

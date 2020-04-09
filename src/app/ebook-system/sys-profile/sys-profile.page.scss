@@ -1,0 +1,36 @@
+.account-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .account-img {
+        width: 98px;
+        height: 98px;
+    }
+}
+
+.account-username-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .account-username-text {
+        font-size: 20px;
+        font-weight: 400;
+    }
+}
+.setting-header-wrapper {
+    .setting-header {
+        display: flex;
+        align-items: center;
+        .setting-header-icon {
+         font-size: 30px;
+         margin: 0 4px;   
+        }
+        .setting-header-text {
+            font-size: 18px;
+        }
+    }
+}
+.setting-item-icon {
+    font-size: 24px;
+    margin: 0 4px;;
+}
