@@ -1,0 +1,20 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onCloseModal()">
+        <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div class="searchbar-wrapper">
+      <ion-input class="searchbar" type="search" [(ngModel)]="searchText" clearInput debounce="500" (ionChange)="onSearching()" placeholder="Type to Search..."></ion-input>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<p>
+  searching works!
+  <span> Location: {{ src }} </span>
+</p>
+</ion-content>

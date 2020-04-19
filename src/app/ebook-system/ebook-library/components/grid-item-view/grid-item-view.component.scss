@@ -1,18 +1,27 @@
-.cover-img {
-    height: 185px;
-    // padding: 0;
-    background-color: #ffffff;
-    background-repeat: no-repeat;
-}
-.card-title {
-    font-size: 16px;
-}
-.card-subtitle {
+.card-wrapper {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    .text {
-        font-size: 12px;
+    .cover-img {
+        height: 185px;
+        width: 185px;
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+    }
+    .card-header-wrapper {
+        .card-header-title {
+            font-size: 14px;
+        }
+        .card-header-subtitle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 0;
+            .text {
+                font-size: 12px;
+            }
+        }
     }
 }
 

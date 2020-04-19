@@ -1,0 +1,14 @@
+// .searching-bar {
+//     --box-shadow: none;
+// }
+
+.searchbar-wrapper {
+    width: 100%;
+    display: flex;
+    .searchbar {
+        flex: 1;
+        margin: 0 4px;
+        border: none;
+        outline: none;
+    }
+}

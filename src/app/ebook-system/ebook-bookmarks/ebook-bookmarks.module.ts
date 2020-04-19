@@ -8,14 +8,18 @@ import { EbookBookmarksPageRoutingModule } from './ebook-bookmarks-routing.modul
 
 import { EbookBookmarksPage } from './ebook-bookmarks.page';
 import { BookmarksListViewComponent } from './components/bookmarks-list-view/bookmarks-list-view.component';
+import { PublicSharedModule } from 'src/app/public-shared/public-shared.module';
+import { SearchingComponent } from 'src/app/public-shared/components/searching/searching.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EbookBookmarksPageRoutingModule
+    EbookBookmarksPageRoutingModule,
+    PublicSharedModule
   ],
-  declarations: [EbookBookmarksPage, BookmarksListViewComponent]
+  declarations: [EbookBookmarksPage, BookmarksListViewComponent],
+  entryComponents: [SearchingComponent]
 })
 export class EbookBookmarksPageModule {}

@@ -1,8 +1,10 @@
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
 import { EbookBaseInfoDto } from './../../models/ebook.model';
 import { ebookListDto } from '../../mocks/ebooks.mock';
+import { ImportEbooksComponent } from './components/import-ebooks/import-ebooks.component';
+import { SearchingComponent } from '../../public-shared/components/searching/searching.component';
 
 @Component({
   selector: 'app-ebook-library',
@@ -17,7 +19,8 @@ export class EbookLibraryPage implements OnInit {
   ebookList: EbookBaseInfoDto[];
 
   constructor(
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private modalCtrl: ModalController
   ) { }
 
   ngOnInit() {}
@@ -26,9 +29,20 @@ export class EbookLibraryPage implements OnInit {
     this.loading();
   }
 
-  onToggleLibrarySearch() {
-    this.isSearchBarShowed = !this.isSearchBarShowed;
-    console.log(`[onToggleLibrarySearch]: ${this.isSearchBarShowed}`);
+  async onShowLibrarySearch() {
+    // this.isSearchBarShowed = !this.isSearchBarShowed;
+    // console.log(`[onToggleLibrarySearch]: ${this.isSearchBarShowed}`);
+
+    const searchingModal = await this.modalCtrl.create({
+      component: SearchingComponent,
+      animated: true,
+      id: 'library-seraching-modal',
+      componentProps: {
+        src: 'library'
+      }
+    });
+    await searchingModal.present();
+
   }
 
   onToggleLibraryItemViewMode() {
@@ -41,6 +55,19 @@ export class EbookLibraryPage implements OnInit {
     setTimeout(() => {
       event.target.complete();
     }, 1500);
+  }
+
+
+  async onShowImportEbooksModal() {
+    const importEbooksmodal = await this.modalCtrl.create({
+      component: ImportEbooksComponent,
+      animated: true,
+      id: 'import-ebooks-modal'
+    });
+    await importEbooksmodal.present();
+
+    const res = await importEbooksmodal.onDidDismiss();
+    console.log(res.data, res.role);
   }
 
   private async loading() {

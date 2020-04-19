@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>Library</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="onToggleLibrarySearch()">
+      <ion-button (click)="onShowLibrarySearch()">
         <ion-icon name="search-outline" slot="icon-only"></ion-icon>
       </ion-button>
       <ion-button (click)="onToggleLibraryItemViewMode()">
@@ -14,13 +14,13 @@
 </ion-header>
 
 <ion-content class="ion-no-padding">
-  <ion-grid>
+  <!-- <ion-grid>
     <ion-row size="12" size-md="8" offset-md="2">
       <ion-col>
         <ion-searchbar *ngIf="isSearchBarShowed" animated placeholder="Type to Search Book..."></ion-searchbar>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
 
   <ion-refresher slot="fixed" (ionRefresh)="onRefreshing($event)">
     <ion-refresher-content
@@ -35,7 +35,7 @@
   <ebook-list-item-view *ngIf="isListViewed" [ebookList]="ebookList"></ebook-list-item-view>
   
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
+    <ion-fab-button (click)="onShowImportEbooksModal()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BookmarkDetailInfoDto } from '../../models/bookmark.model';
 import { bookmarksListDto } from '../../mocks/bookmaarks.mock';
-import { LoadingController, IonRefresher } from '@ionic/angular';
+import { LoadingController, IonRefresher, ModalController } from '@ionic/angular';
+import { SearchingComponent } from '../../public-shared/components/searching/searching.component';
 
 @Component({
   selector: 'app-ebook-bookmarks',
@@ -15,7 +16,8 @@ export class EbookBookmarksPage implements OnInit {
   bookmarksList: BookmarkDetailInfoDto[];
 
   constructor(
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private modalCtrl: ModalController
   ) { }
 
   ngOnInit() {}
@@ -25,8 +27,18 @@ export class EbookBookmarksPage implements OnInit {
     this.loadingBookmarks();
   }
 
-  onToggleLibrarySearch() {
-    this.isSearchBarShowed = !this.isSearchBarShowed;
+  async onShowBookmarkSearch() {
+    // this.isSearchBarShowed = !this.isSearchBarShowed;
+    const searchingModal = await this.modalCtrl.create({
+      component: SearchingComponent,
+      animated: true,
+      id: 'bookmarks-seraching-modal',
+      componentProps: {
+        src: 'bookmarks'
+      }
+    });
+    await searchingModal.present();
+
   }
 
 
@@ -39,7 +51,7 @@ export class EbookBookmarksPage implements OnInit {
 
   private async loadingBookmarks() {
     const loading = await this.loadingCtrl.create({
-      message: 'Loading Books...',
+      message: 'Loading Bookmarks...',
       spinner: 'bubbles',
       duration: 500
     });
